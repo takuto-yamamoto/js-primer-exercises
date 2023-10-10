@@ -2,29 +2,23 @@
 
 [JS Primer](https://jsprimer.net/use-case/) の演習
 
-## How to use
+## ディレクトリ構成
 
-- Dockerfile をビルドしコンテナを起動
+- `http-server-practice/`
 
-```
-# イメージのビルド
-$ docker build -t js-primer
+  - [アプリケーション開発の準備](https://jsprimer.net/use-case/setup-local-env/)
+  - 以降の演習で使用する HTTP サーバを起動するハンズオン
 
-# コンテナ起動
-$ docker run -it \
-  -p 8080:3000 \
-  -v ${PWD}:/usr/src/app \
-  js-primer /bin/sh
-```
+- `ajaxapp`
 
-- コンテナ内で http サーバを起動
+  - [Ajax 通信](https://jsprimer.net/use-case/ajaxapp/)
+  - GitHub のユーザー ID からプロフィール情報を取得するアプリケーションを作成するハンズオン
 
-```
-$ cd public
-$ npx --yes @js-primer/local-server
+- `nodejs-practice`
 
-js-primerのサーバーを起動しました。
-次のURLをローカルブラウザで開いてください。
-k
-  URL: http://localhost:8080
-```
+  - [Node.js で CLI アプリ](https://jsprimer.net/use-case/nodecli/)
+  - Markdown 形式のテキストファイルを HTML テキストに変換する CLI ツールを Node.js で開発するハンズオン
+
+- `todoapp`
+  - [Todo アプリ](https://jsprimer.net/use-case/todoapp/)
+  - Todo アプリを作る総合演習
