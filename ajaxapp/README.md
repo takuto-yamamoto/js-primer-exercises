@@ -10,6 +10,9 @@ JS Primer の Ajax 通信ハンズオン
 イメージのビルドおよび内容は[http-server-practice の README.md](../http-server-practice/README.md)を参照
 
 ```
+# ajaxappディレクトリに移動
+$ cd ajaxapp
+
 # コンテナ起動
 $ docker run -it \
   --name ajaxapp

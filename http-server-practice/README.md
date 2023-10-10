@@ -11,6 +11,9 @@ JS Primer の HTTP サーバ起動ハンズオン
 # イメージのビルド
 $ docker build -t js-primer
 
+# http-server-practiceディレクトリに移動
+$ cd http-server-practice
+
 # コンテナ起動
 $ docker run -it \
   --name http-server
