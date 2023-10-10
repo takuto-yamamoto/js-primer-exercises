@@ -13,6 +13,7 @@ $ docker build -t js-primer
 
 # コンテナ起動
 $ docker run -it \
+  --name http-server
   -p 8080:3000 \
   -v ${PWD}:/usr/src/app \
   js-primer /bin/sh
@@ -21,7 +22,6 @@ $ docker run -it \
 - コンテナ内で http サーバを起動
 
 ```
-$ cd public
 $ npx --yes @js-primer/local-server
 
 js-primerのサーバーを起動しました。
