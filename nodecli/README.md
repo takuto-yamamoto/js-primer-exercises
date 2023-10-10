@@ -37,3 +37,9 @@ $ npm install commander@9.0
 # npm pkg コマンドで type フィールドの値をセットする
 $ npm pkg set type=module
 ```
+
+- marked パッケージを install
+
+```
+$ npm install marked@4.0
+```
