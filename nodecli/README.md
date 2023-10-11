@@ -1,4 +1,4 @@
-# ajaxapp
+# nodeclu
 
 JS Primer の Node.js CLI ハンズオン
 [Node.js で CLI アプリ](https://jsprimer.net/use-case/nodecli/)
