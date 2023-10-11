@@ -1,30 +1,24 @@
 import { program } from 'commander';
 import * as fs from 'node:fs/promises';
-import { marked } from 'marked';
+// md2htmlモジュールからmd2html関数をインポートする
+import { md2html } from './md2html.js';
 
-// gfmオプションを定義する
 program.option('--gfm', 'GFMを有効にする');
-
-// コマンドライン引数をcommanderでparseする
 program.parse(process.argv);
+const filePath = program.args[0];
 
-// オプションをオブジェクトとして取得
-const options = program.opts();
 const cliOptions = {
-  gfm: options.gfm ?? false,
+  gfm: false,
+  ...program.opts(),
 };
 
-// ファイルパスをprogram.argsから取り出す
-const filePath = program.args[0];
-console.log(filePath);
-
-// ファイルを非同期で読み込む
-fs.readFile(filePath, { encoding: 'utf-8' })
+fs.readFile(filePath, { encoding: 'utf8' })
   .then((file) => {
-    const html = marked.parse(file, cliOptions);
+    // md2htmlモジュールを使ってHTMLに変換する
+    const html = md2html(file, cliOptions);
     console.log(html);
   })
-  .catch((e) => {
-    console.error(e.message);
+  .catch((err) => {
+    console.error(err.message);
     process.exit(1);
   });
