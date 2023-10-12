@@ -1,3 +1,4 @@
+// ユニークなIDを管理する変数
 let todoIdx = 0;
 
 export class TodoItemModel {
@@ -7,7 +8,6 @@ export class TodoItemModel {
   title;
   /** @type {boolean} Todoアイテムが完了済みならばtrue、そうでない場合はfalse */
   completed;
-
   /**
    * @param {{ title: string, completed: boolean }}
    */
@@ -16,5 +16,13 @@ export class TodoItemModel {
     this.id = todoIdx++;
     this.title = title;
     this.completed = completed;
+  }
+
+  /**
+   * タイトルが空文字列の場合にtrueを返す
+   * @returns {boolean}
+   */
+  isEmptyTitle() {
+    return this.title.length === 0;
   }
 }
